@@ -462,7 +462,7 @@ load_rb_file(mrb_state *mrb, mrb_value filepath)
 static void
 load_file(mrb_state *mrb, mrb_value filepath)
 {
-  char *ext = strrchr(RSTRING_CSTR(mrb, filepath), '.');
+  const char *ext = strrchr(RSTRING_CSTR(mrb, filepath), '.');
 
   if (!ext || strcmp(ext, ".rb") == 0) {
     load_rb_file(mrb, filepath);
